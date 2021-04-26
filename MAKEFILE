@@ -1,0 +1,5 @@
+bison -y -d c.y 
+flex c.l
+gcc -c y.tab.c lex.yy.c
+gcc y.tab.o lex.yy.o -o parser
+./parser c.c
