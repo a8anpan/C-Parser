@@ -1,2 +1,0 @@
-PROGRAM program
-var1
