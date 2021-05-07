@@ -1,2 +1,4 @@
 PROGRAM program 
-INTEGER var1,var2,var3,var4[10],var5;
+FUNCTION function(INTEGER var1)
+VARS INTEGER var2,var3;
+END_FUNCTION
