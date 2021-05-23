@@ -1,0 +1,4 @@
+PROGRAM program 
+FUNCTION function(INTEGER var1, INTEGER var2)
+BREAK;
+END_FUNCTION
