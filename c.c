@@ -1,4 +1,0 @@
-PROGRAM program 
-FUNCTION function(INTEGER var1, INTEGER var2)
-var=1;
-END_FUNCTION 
