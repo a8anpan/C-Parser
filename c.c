@@ -1,0 +1,15 @@
+PROGRAM program 
+FUNCTION function(INTEGER var1, INTEGER var2)
+var=1;
+var56=3;
+RETURN 2;
+END_FUNCTION 
+
+FUNCTION function1(INTEGER var3, INTEGER var4)
+var=2;
+RETURN var;
+END_FUNCTION
+
+STARTMAIN 
+var100=20;
+ENDMAIN
