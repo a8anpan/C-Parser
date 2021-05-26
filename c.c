@@ -1,0 +1,5 @@
+PROGRAM program 
+
+STARTMAIN 
+var100=20;
+ENDMAIN
