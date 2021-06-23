@@ -1,51 +1,49 @@
-<program> :: <decllist>
-<decList> :: = <decl> | <decl> 
+<program> :: <decList>
+<decList> :: = <declList decl> | <decl> 
 <decl> :: = varDecl | <funDecl>
-<funDecl> :: = <typeSpec> ID parms  <stmt> |ID (parms) <stmt>	
-<mainDecl> :: = 
-<structDecl> :: = 
-<struct> :: = 
+<funDecl> :: = <typeSpec> ID (parms)  <stmt> |ID (parms) <stmt>	
 
 <stmtList>:: = <stmtList> <stmt>
-<stmt> :: =  <expStmt> | <iterStmt> | <selectStmt> | <switch> |  <print> | <break>   
+<stmt> :: =  <expStmt> | <iterStmt> | <selectStmt> | <switch> |  <print> | <breakStmt>  | TYPE_COMMENT 
 <iterStmt> :: = while <simpleExp> do <stmt> | for ID=iterRange do <stmt> 
 <selectStmt> :: =if <simpleExp> then <stmt> | if  simpleExp then <stmt> else <stmt>
 
-<elseif> :: =
-<switch> :: =
-<case> :: =
-<print> :: =
-
-<varRepeat> :: =
-<spaces> :: =
-<newline> :: =
-<space> :: =
-<spac> :: =
-
-<text> :: =
-<break> :: =
-<condition> :: =
 
 <expStmt> :: = <exp> ; | ;
 <exp> :: = <mutable> '=' <exp> | <mutable> '+=' <exp> | <mutable> '-=' <exp> | <mutable. '*=' <exp> | <mutable> '/=' <exp> | <mutable> ++|
-           <mutable> --
-<resExp> :: =
-<complExp> :: =
-
-<mutable> :: = ID | ID <exp> 
+           <mutable> -- | <SimpleExp>
+     
+<mutable> :: = ID | ID [ exp ] 
 <call> :: = ID <args>
 <args> :: = <argList> 
 <argList> :: =<argList> , <exp> | <exp>
+
 <parms> :: =<parmList> 
 <parmList> :: = <parmList> ; <parmTypeList> | <parmTypeList>
-<parmTypeList> :: =<typeSpec> | 
+<parmTypeList> :: = <typeSpec>  parmIdList
+<parmIdList> :: = <parmIdList> , <parmId> | <parmId>
+<parmId> :: = ID | ID []
+
 
 <varDecl> :: =<typeSpec> <varDeclList>
 <typeSpec> :: = int | char
+
 <varDeclList> :: =<varDeclId>,<varDeclInit> | <varDEclInit>
 <varDeclInit> :: =<varDeclId> | <varDeclId> : simpleExp
 <varDeclId> :: = ID | ID [NUMCONST]
 
+<returnStmt> :: = <return> ; | <return> exp;
+<breakStmt> :: = <break> ;
 
+<simpleExp> :: = <simpleExp> or <andExp> | <andExp>
+<andExp> :: = <andExp> and <unaryRelExp> | <unaryRelExp>
+<unaryRelExp> :: = not <unaryRElExp> | <relExp>
 
+<mulExp> :: = <mulExp> <mulop> <unaryExp> | <unaryExp>
+<mulop> :: = * | / | %
+<unaryExp> :: = <unaryop> <unaryExp> | <factor>
+<unaryop> :: = - | * | ?
+
+<factor> :: = <immutable> | <mutable>
+<immutable> :: = (exp) | <call>
 
